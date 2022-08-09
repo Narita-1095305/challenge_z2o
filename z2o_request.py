@@ -3,13 +3,11 @@ import json
 import sys
 import time
 
-nickname = input("ニックネームを決めてください。")
-print(f'nickname:{nickname}')
 url = 'http://challenge.z2o.cloud/challenges'
 
 #サーバ側のレスポンスに依存する処理のため、try except文で異常が起きていないか判定
 try:
-    response_json = (requests.post(url, params={'nickname': nickname})).json()
+    response_json = (requests.post(url, params={'nickname': 'narita'})).json()
 except:
     print("サーバー側で問題が発生しました。")
     sys.exit(1)
